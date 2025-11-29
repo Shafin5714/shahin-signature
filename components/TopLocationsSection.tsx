@@ -9,14 +9,14 @@ const locations = [
         id: 1,
         name: "Gulshan",
         listings: 45,
-        image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&q=80",
+        image: "/gulshan.jpg",
         className: "md:col-span-2 md:row-span-2"
     },
     {
         id: 2,
         name: "Banani",
         listings: 32,
-        image: "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&q=80",
+        image: "/bonani.jpg",
         className: "md:col-span-1 md:row-span-1"
     },
     {
@@ -37,7 +37,7 @@ const locations = [
         id: 5,
         name: "Bashundhara",
         listings: 25,
-        image: "https://images.unsplash.com/photo-1464146072230-91cabc968266?w=800&q=80",
+        image: "/bashundhara.jpg",
         className: "md:col-span-1 md:row-span-1"
     }
 ];

@@ -22,7 +22,7 @@ const properties = [
         id: 3,
         title: "Offices",
         count: "20 Properties",
-        image: "/property-types/offices.png",
+        image: "/property-types/offices.jpg",
         className: "md:col-span-1 md:row-span-2",
     },
     {
@@ -36,7 +36,7 @@ const properties = [
         id: 5,
         title: "Apartments",
         count: "19 Properties",
-        image: "/property-types/apartments.png",
+        image: "/property-types/apartments.jpg",
         className: "md:col-span-2 md:row-span-1",
     },
 ];
