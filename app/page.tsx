@@ -5,6 +5,7 @@ import FeaturedListingsSection from "@/components/FeaturedListingsSection";
 import TopLocationsSection from "@/components/TopLocationsSection";
 import FindHomeSection from "@/components/FindHomeSection";
 import LatestPropertiesSection from "@/components/LatestPropertiesSection";
+import ServicesSection from "@/components/ServicesSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <TopLocationsSection />
       <FindHomeSection />
       <LatestPropertiesSection />
+      <ServicesSection />
     </main>
   );
 }
