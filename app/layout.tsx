@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   description: "Luxury Real Estate",
 };
 
+import Footer from "@/components/Footer";
+
+// ... (existing imports)
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,6 +40,7 @@ export default function RootLayout({
         className={`${dmSans.variable} ${cormorantGaramond.variable} ${poppins.variable} font-sans antialiased`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );
