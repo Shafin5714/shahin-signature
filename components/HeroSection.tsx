@@ -8,19 +8,23 @@ export default function HeroSection() {
     const [activeTab, setActiveTab] = useState("all");
 
     return (
-        <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-            {/* Background Image */}
-            <div
-                className="absolute inset-0 z-0"
-                style={{
-                    backgroundImage: "url('/hero-bg-min.png')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
-            >
+        <section className="relative h-[90vh] min-h-[700px] flex items-center justify-center overflow-hidden">
+            {/* Background Image with Ken Burns Effect */}
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                <motion.div
+                    initial={{ scale: 1.1 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
+                    className="absolute inset-0"
+                    style={{
+                        backgroundImage: "url('/hero-bg-min.png')",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                />
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-[#002B4A]/40 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute inset-0 bg-linear-to-b from-[#002B4A]/60 via-[#002B4A]/40 to-[#002B4A]/70 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-black/10" />
             </div>
 
             {/* Content */}
@@ -29,12 +33,14 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
+                    className="max-w-5xl mx-auto"
                 >
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-white mb-6">
-                        Welcome To <span className="font-semibold">Shahin Signature</span>
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-cormorant font-light text-white mb-8 leading-none tracking-tight drop-shadow-lg">
+                        Welcome To <br className="md:hidden" />
+                        <span className="font-bold italic">Shahin Signature</span>
                     </h1>
-                    <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-12 font-light">
-                        Shahin Signature is an innovative real estate platform that helps to ensure your website's success in this super-competitive market.
+                    <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto mb-16 font-light font-poppins tracking-wide leading-relaxed drop-shadow-md">
+                        An innovative real estate platform ensuring your success in a competitive market.
                     </p>
                 </motion.div>
 
@@ -45,48 +51,31 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="w-full max-w-5xl"
                 >
-                    {/* Tabs */}
-                    <div className="flex items-center gap-1 mb-0 ">
-                        <button
-                            onClick={() => setActiveTab("all")}
-                            className={`px-8 py-4 text-sm font-bold rounded-t-lg transition-all duration-200 ${activeTab === "all"
-                                ? "bg-white text-[#002B4A]"
-                                : "bg-[#002B4A]/80 text-white hover:bg-[#002B4A] hover:text-white"
-                                }`}
-                        >
-                            All Status
-                        </button>
-                        <button
-                            onClick={() => setActiveTab("rent")}
-                            className={`px-8 py-4 text-sm font-bold rounded-t-lg transition-all duration-200 ${activeTab === "rent"
-                                ? "bg-white text-[#002B4A]"
-                                : "bg-[#002B4A]/80 text-white hover:bg-[#002B4A] hover:text-white"
-                                }`}
-                        >
-                            For Rent
-                        </button>
-                        <button
-                            onClick={() => setActiveTab("sale")}
-                            className={`px-8 py-4 text-sm font-bold rounded-t-lg transition-all duration-200 ${activeTab === "sale"
-                                ? "bg-white text-[#002B4A]"
-                                : "bg-[#002B4A]/80 text-white hover:bg-[#002B4A] hover:text-white"
-                                }`}
-                        >
-                            For Sale
-                        </button>
+                    {/* Floating Tabs */}
+                    <div className="flex items-center justify-center gap-4 mb-6">
+                        {["all", "rent", "sale"].map((tab) => (
+                            <button
+                                key={tab}
+                                onClick={() => setActiveTab(tab)}
+                                className={`px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widest transition-all duration-300 backdrop-blur-md border ${activeTab === tab
+                                    ? "bg-white text-[#002B4A] border-white shadow-lg transform scale-105"
+                                    : "bg-black/20 text-white border-white/20 hover:bg-black/40 hover:border-white/50"
+                                    }`}
+                            >
+                                {tab === "all" ? "All Status" : `For ${tab}`}
+                            </button>
+                        ))}
                     </div>
 
-                    {/* Search Fields */}
-                    <div className="bg-white p-8 rounded-b-lg rounded-tr-lg shadow-2xl grid grid-cols-1 md:grid-cols-12 gap-6 items-end">
+                    {/* Segmented Search Bar */}
+                    <div className="bg-white rounded-full shadow-2xl p-2 flex flex-col md:flex-row items-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
 
                         {/* Looking For */}
-                        <div className="md:col-span-3">
-                            <label className="block text-xs font-bold text-gray-400 uppercase mb-1 text-left">Looking For</label>
-                            <div className="relative">
-                                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                                    <Home size={18} />
-                                </div>
-                                <select className="w-full h-12 pl-10 pr-4 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#00AEEF] appearance-none bg-transparent">
+                        <div className="w-full md:w-1/4 px-6 py-3 relative group">
+                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-left group-hover:text-[#00AEEF] transition-colors">Looking For</label>
+                            <div className="flex items-center gap-2">
+                                <Home size={18} className="text-[#002B4A]" />
+                                <select className="w-full bg-transparent text-gray-800 font-semibold text-sm focus:outline-none cursor-pointer appearance-none truncate">
                                     <option>Property Type</option>
                                     <option>Apartment</option>
                                     <option>Villa</option>
@@ -96,29 +85,26 @@ export default function HeroSection() {
                         </div>
 
                         {/* Location */}
-                        <div className="md:col-span-3">
-                            <label className="block text-xs font-bold text-gray-400 uppercase mb-1 text-left">Location</label>
-                            <div className="relative">
-                                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                                    <MapPin size={18} />
-                                </div>
-                                <select className="w-full h-12 pl-10 pr-4 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#00AEEF] appearance-none bg-transparent">
+                        <div className="w-full md:w-1/4 px-6 py-3 relative group">
+                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-left group-hover:text-[#00AEEF] transition-colors">Location</label>
+                            <div className="flex items-center gap-2">
+                                <MapPin size={18} className="text-[#002B4A]" />
+                                <select className="w-full bg-transparent text-gray-800 font-semibold text-sm focus:outline-none cursor-pointer appearance-none truncate">
                                     <option>All Cities</option>
-                                    <option>New York</option>
-                                    <option>Los Angeles</option>
-                                    <option>Chicago</option>
+                                    <option>Dhaka</option>
+                                    <option>Chittagong</option>
+                                    <option>Sylhet</option>
+                                    <option>Cox's Bazar</option>
                                 </select>
                             </div>
                         </div>
 
-                        {/* Property Size */}
-                        <div className="md:col-span-2">
-                            <label className="block text-xs font-bold text-gray-400 uppercase mb-1 text-left">Property Size</label>
-                            <div className="relative">
-                                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                                    <BedDouble size={18} />
-                                </div>
-                                <select className="w-full h-12 pl-10 pr-4 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#00AEEF] appearance-none bg-transparent">
+                        {/* Size */}
+                        <div className="w-full md:w-1/5 px-6 py-3 relative group">
+                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-left group-hover:text-[#00AEEF] transition-colors">Size</label>
+                            <div className="flex items-center gap-2">
+                                <BedDouble size={18} className="text-[#002B4A]" />
+                                <select className="w-full bg-transparent text-gray-800 font-semibold text-sm focus:outline-none cursor-pointer appearance-none truncate">
                                     <option>Bedrooms</option>
                                     <option>1</option>
                                     <option>2</option>
@@ -128,26 +114,23 @@ export default function HeroSection() {
                         </div>
 
                         {/* Budget */}
-                        <div className="md:col-span-2">
-                            <label className="block text-xs font-bold text-gray-400 uppercase mb-1 text-left">Your Budget</label>
-                            <div className="relative">
-                                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                                    <DollarSign size={18} />
-                                </div>
-                                <select className="w-full h-12 pl-10 pr-4 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#00AEEF] appearance-none bg-transparent">
-                                    <option>Max. Price</option>
-                                    <option>$1000</option>
-                                    <option>$5000</option>
-                                    <option>$10000+</option>
+                        <div className="w-full md:w-1/5 px-6 py-3 relative group">
+                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-left group-hover:text-[#00AEEF] transition-colors">Budget</label>
+                            <div className="flex items-center gap-2">
+                                <span className="text-[#002B4A] font-bold text-lg">৳</span>
+                                <select className="w-full bg-transparent text-gray-800 font-semibold text-sm focus:outline-none cursor-pointer appearance-none truncate">
+                                    <option>Max Price</option>
+                                    <option>10,000</option>
+                                    <option>50,000</option>
+                                    <option>1 Lakh+</option>
                                 </select>
                             </div>
                         </div>
 
                         {/* Search Button */}
-                        <div className="md:col-span-2">
-                            <button className="w-full h-12 bg-linear-to-r from-[#00AEEF] to-[#0077A3] hover:from-[#0095CC] hover:to-[#006285] text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 transform hover:-translate-y-0.5">
-                                <Search size={20} />
-                                Search
+                        <div className="p-1.5 w-full md:w-auto ml-auto">
+                            <button className="w-full md:w-14 h-14 bg-[#002B4A] hover:bg-[#00AEEF] text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-105 group">
+                                <Search size={24} className="group-hover:rotate-90 transition-transform duration-300" />
                             </button>
                         </div>
 
