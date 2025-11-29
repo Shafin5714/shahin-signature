@@ -43,27 +43,35 @@ const properties = [
 
 export default function PropertyTypesSection() {
     return (
-        <section className="py-20 bg-white">
+        <section className="py-24 bg-white">
             <div className="container mx-auto px-6">
                 {/* Header */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-16">
+                    <motion.span
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-[#00AEEF] font-bold tracking-[0.2em] uppercase text-xs mb-4 block"
+                    >
+                        Property Categories
+                    </motion.span>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="text-3xl md:text-4xl font-bold text-[#002B4A] mb-4"
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        className="text-4xl md:text-5xl font-bold text-[#002B4A] mb-4"
                     >
-                        Explore Apartment Types
+                        Browse By Property Type
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-gray-500 max-w-2xl mx-auto"
+                        className="text-gray-600 max-w-2xl mx-auto"
                     >
-                        Explore all the different types of apartments so you can choose the best option for you
+                        Find your perfect property from our curated selection
                     </motion.p>
                 </div>
 
@@ -72,28 +80,46 @@ export default function PropertyTypesSection() {
                     {properties.map((property, index) => (
                         <motion.div
                             key={property.id}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            whileHover={{ y: -5 }}
-                            className={`relative group overflow-hidden rounded-xl cursor-pointer shadow-lg ${property.className}`}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
+                            className={`relative group overflow-hidden rounded-lg cursor-pointer ${property.className}`}
                         >
-                            {/* Background Image */}
+                            {/* Background Image - Full Color */}
                             <Image
                                 src={property.image}
                                 alt={property.title}
                                 fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                className="object-cover transition-all duration-500 ease-out group-hover:scale-110"
                             />
 
                             {/* Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 transition-all duration-300" />
 
                             {/* Content */}
-                            <div className="absolute bottom-0 left-0 p-6 text-white">
-                                <h3 className="text-2xl font-bold mb-1">{property.title}</h3>
-                                <p className="text-sm text-gray-300 font-medium">{property.count}</p>
+                            <div className="absolute inset-0 p-6 flex flex-col justify-between">
+                                {/* Count Badge - Always Visible */}
+                                <div className="flex justify-end">
+                                    <span className="bg-[#E74C3C] text-white text-xs font-semibold px-3 py-1.5 rounded">
+                                        {property.count}
+                                    </span>
+                                </div>
+
+                                {/* Title - Always Visible */}
+                                <div className="transform group-hover:-translate-y-1 transition-transform duration-300">
+                                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                                        {property.title}
+                                    </h3>
+
+                                    {/* Explore Link - Shows on Hover */}
+                                    <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <span className="text-white text-sm font-medium">Explore</span>
+                                        <svg className="w-4 h-4 text-white transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                        </svg>
+                                    </div>
+                                </div>
                             </div>
                         </motion.div>
                     ))}
