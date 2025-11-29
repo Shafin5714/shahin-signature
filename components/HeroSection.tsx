@@ -17,7 +17,7 @@ export default function HeroSection() {
                     transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
                     className="absolute inset-0"
                     style={{
-                        backgroundImage: "url('/hero-bg-min.png')",
+                        backgroundImage: "url('/hero-bg-luxury.png')",
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                     }}

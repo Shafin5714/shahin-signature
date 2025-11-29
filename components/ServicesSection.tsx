@@ -61,6 +61,7 @@ export default function ServicesSection() {
             <div className="absolute inset-0 pointer-events-none opacity-5">
                 <div className="absolute top-20 left-10 w-72 h-72 bg-[#00AEEF] rounded-full blur-3xl"></div>
                 <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#002B4A] rounded-full blur-3xl"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border-[100px] border-gray-200 rounded-full opacity-20"></div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10">

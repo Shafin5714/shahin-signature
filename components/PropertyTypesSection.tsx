@@ -43,8 +43,14 @@ const properties = [
 
 export default function PropertyTypesSection() {
     return (
-        <section className="py-24 bg-white">
-            <div className="container mx-auto px-6">
+        <section className="py-24 bg-white relative overflow-hidden">
+            {/* Background Decorations */}
+            <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-20 left-10 w-64 h-64 border-2 border-[#00AEEF]/5 rounded-full"></div>
+                <div className="absolute bottom-20 right-10 w-48 h-48 bg-[#002B4A]/5 rotate-45 transform"></div>
+            </div>
+
+            <div className="container mx-auto px-6 relative z-10">
                 {/* Header */}
                 <div className="text-center mb-16">
                     <motion.span
