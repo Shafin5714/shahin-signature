@@ -35,7 +35,7 @@ export default function HeroSection() {
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={isLoading ? { opacity: 0, y: 30 } : { opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    transition={{ duration: 0.8, delay: isLoading ? 0 : 1.0 }}
                     className="max-w-5xl mx-auto"
                 >
                     <h1 className="text-4xl md:text-7xl lg:text-8xl font-cormorant font-light text-white mb-8 leading-none tracking-tight drop-shadow-lg">
@@ -51,7 +51,7 @@ export default function HeroSection() {
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={isLoading ? { opacity: 0, y: 50 } : { opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
+                    transition={{ duration: 0.8, delay: isLoading ? 0 : 1.2 }}
                     className="w-full max-w-5xl"
                 >
                     {/* Floating Tabs */}

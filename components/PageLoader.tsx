@@ -21,7 +21,7 @@ export default function PageLoader() {
         <AnimatePresence>
             {isLoading && (
                 <motion.div
-                    className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#002B4A] text-white"
+                    className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#002B4A] text-white"
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}
                 >
