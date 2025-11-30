@@ -5,7 +5,10 @@ import Link from "next/link";
 import { Phone, User, PlusCircle, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+import { useLoading } from "@/context/LoadingContext";
+
 export default function Header() {
+  const { isLoading } = useLoading();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -33,8 +36,8 @@ export default function Header() {
   return (
     <motion.header
       initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+      animate={{ y: isLoading ? -100 : 0 }}
+      transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
         ? "bg-[#002B4A]/90 backdrop-blur-md shadow-lg py-3"
         : "bg-transparent py-6"

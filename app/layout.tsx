@@ -26,6 +26,8 @@ export const metadata: Metadata = {
 };
 
 import Footer from "@/components/Footer";
+import { LoadingProvider } from "@/context/LoadingContext";
+import PageLoader from "@/components/PageLoader";
 
 // ... (existing imports)
 
@@ -39,8 +41,11 @@ export default function RootLayout({
       <body
         className={`${dmSans.variable} ${cormorantGaramond.variable} ${poppins.variable} font-sans antialiased`}
       >
-        {children}
-        <Footer />
+        <LoadingProvider>
+          <PageLoader />
+          {children}
+          <Footer />
+        </LoadingProvider>
       </body>
     </html>
   );

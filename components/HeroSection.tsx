@@ -4,7 +4,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Search, MapPin, BedDouble, DollarSign, Home } from "lucide-react";
 
+import { useLoading } from "@/context/LoadingContext";
+
 export default function HeroSection() {
+    const { isLoading } = useLoading();
     const [activeTab, setActiveTab] = useState("all");
 
     return (
@@ -31,7 +34,7 @@ export default function HeroSection() {
             <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center mt-8 md:mt-20">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    animate={isLoading ? { opacity: 0, y: 30 } : { opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="max-w-5xl mx-auto"
                 >
@@ -47,7 +50,7 @@ export default function HeroSection() {
                 {/* Search Box */}
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    animate={isLoading ? { opacity: 0, y: 50 } : { opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="w-full max-w-5xl"
                 >
