@@ -69,7 +69,7 @@ export default function Header() {
         <div className="hidden lg:flex items-center gap-6">
           <div className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
             <Phone size={18} />
-            <span className="text-sm font-poppins font-medium tracking-wide">(800) 987 6543</span>
+            <span className="text-sm font-poppins font-medium tracking-wide">+880 1712 345 678</span>
           </div>
           <button className="text-white/90 hover:text-blue-400 transition-colors">
             <User size={22} />
@@ -117,7 +117,7 @@ export default function Header() {
               <div className="h-px bg-white/10 my-2" />
               <div className="flex items-center gap-2 text-white">
                 <Phone size={18} />
-                <span className="text-sm font-poppins font-medium">(800) 987 6543</span>
+                <span className="text-sm font-poppins font-medium">+880 1712 345 678</span>
               </div>
               <Link
                 href="/create-listing"
