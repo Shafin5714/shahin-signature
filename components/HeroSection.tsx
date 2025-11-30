@@ -8,7 +8,7 @@ export default function HeroSection() {
     const [activeTab, setActiveTab] = useState("all");
 
     return (
-        <section className="relative h-[90vh] min-h-[700px] flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-12 md:py-0">
             {/* Background Image with Ken Burns Effect */}
             <div className="absolute inset-0 z-0 overflow-hidden">
                 <motion.div
@@ -28,14 +28,14 @@ export default function HeroSection() {
             </div>
 
             {/* Content */}
-            <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center mt-20">
+            <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center mt-8 md:mt-20">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="max-w-5xl mx-auto"
                 >
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-cormorant font-light text-white mb-8 leading-none tracking-tight drop-shadow-lg">
+                    <h1 className="text-4xl md:text-7xl lg:text-8xl font-cormorant font-light text-white mb-8 leading-none tracking-tight drop-shadow-lg">
                         Welcome To <br className="md:hidden" />
                         <span className="font-bold italic">Shahin Signature</span>
                     </h1>
@@ -52,7 +52,7 @@ export default function HeroSection() {
                     className="w-full max-w-5xl"
                 >
                     {/* Floating Tabs */}
-                    <div className="flex items-center justify-center gap-4 mb-6">
+                    <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-6">
                         {["all", "rent", "sale"].map((tab) => (
                             <button
                                 key={tab}
@@ -68,7 +68,7 @@ export default function HeroSection() {
                     </div>
 
                     {/* Segmented Search Bar */}
-                    <div className="bg-white rounded-full shadow-2xl p-2 flex flex-col md:flex-row items-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                    <div className="bg-white rounded-3xl md:rounded-full shadow-2xl p-2 flex flex-col md:flex-row items-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
 
                         {/* Looking For */}
                         <div className="w-full md:w-1/4 px-6 py-3 relative group">
@@ -129,7 +129,7 @@ export default function HeroSection() {
 
                         {/* Search Button */}
                         <div className="p-1.5 w-full md:w-auto ml-auto">
-                            <button className="w-full md:w-14 h-14 bg-[#002B4A] hover:bg-[#00AEEF] text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-105 group">
+                            <button className="w-full md:w-14 h-14 bg-[#002B4A] hover:bg-[#00AEEF] text-white rounded-xl md:rounded-full shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-105 group">
                                 <Search size={24} className="group-hover:rotate-90 transition-transform duration-300" />
                             </button>
                         </div>
