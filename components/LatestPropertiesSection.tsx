@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Bed, Bath, Maximize, MapPin } from "lucide-react";
+import { Bed, Bath, Maximize, MapPin, ChevronRight } from "lucide-react";
 
 const latestProperties = [
     {
@@ -128,69 +128,85 @@ export default function LatestPropertiesSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className="bg-white border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group"
+                            className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col"
                         >
                             {/* Image Container */}
-                            <div className="relative h-64 overflow-hidden">
+                            <div className="relative h-60 overflow-hidden">
                                 <Image
                                     src={property.image}
                                     alt={property.title}
                                     fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                                 />
 
+                                {/* Gradient Overlay */}
+                                <div className="absolute inset-0 bg-linear-to-t from-[#002B4A]/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
+
                                 {/* Status Badge */}
-                                <div className="absolute top-3 left-3">
-                                    <span className={`${property.statusColor} text-white text-[10px] font-bold px-2.5 py-1 uppercase tracking-wide`}>
+                                <div className="absolute top-4 left-4">
+                                    <span className={`backdrop-blur-md bg-white/90 text-[#002B4A] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm`}>
                                         {property.status}
                                     </span>
                                 </div>
 
-                                {/* Featured Badge */}
-                                <div className="absolute top-3 right-3">
-                                    <span className="bg-[#002B4A] text-white text-[10px] font-bold px-2.5 py-1 uppercase tracking-wide">
-                                        Featured
-                                    </span>
-                                </div>
+                                {/* Like Button */}
+                                <button className="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-md hover:bg-white text-white hover:text-red-500 rounded-full flex items-center justify-center transition-all duration-300 group/btn">
+                                    <svg className="w-4 h-4 transition-transform duration-300 group-hover/btn:scale-110" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                    </svg>
+                                </button>
 
-                                {/* Overlay with Title and Price */}
-                                <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/90 via-black/50 to-transparent p-4">
-                                    <h3 className="text-white text-lg font-bold mb-1 line-clamp-1">
-                                        {property.title}
-                                    </h3>
-                                    <div className="flex items-center justify-between">
-                                        <p className="text-white text-xl font-bold">{property.price}</p>
+                                {/* Price Tag */}
+                                <div className="absolute bottom-4 left-4">
+                                    <div className="bg-[#002B4A] text-white px-3 py-1.5 rounded-lg shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                        <span className="text-base font-bold">{property.price}</span>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Content */}
-                            <div className="p-4">
-                                {/* Address */}
-                                <div className="flex items-start gap-1 text-gray-500 mb-3">
-                                    <MapPin className="w-3 h-3 mt-0.5 shrink-0" />
-                                    <span className="text-[11px] line-clamp-1">{property.address}</span>
+                            <div className="p-5 flex flex-col grow relative">
+                                {/* Floating Price (Visible by default, hides on hover) */}
+                                <div className="absolute -top-5 right-5 bg-[#00AEEF] text-white px-3 py-1.5 rounded-lg shadow-lg group-hover:opacity-0 transition-opacity duration-300">
+                                    <span className="text-base font-bold">{property.price}</span>
                                 </div>
 
-                                {/* Property Details */}
-                                <div className="flex items-center justify-between text-gray-600 pb-3 border-b border-gray-100">
-                                    <div className="flex items-center gap-1">
-                                        <Bed className="w-3.5 h-3.5" />
-                                        <span className="text-xs font-medium">{property.beds}</span>
+                                <div className="flex items-start gap-1.5 text-gray-500 mb-1.5 mt-1">
+                                    <MapPin className="w-3.5 h-3.5 mt-0.5 text-[#00AEEF] shrink-0" />
+                                    <span className="text-xs font-medium line-clamp-1">{property.address}</span>
+                                </div>
+
+                                <h3 className="text-lg font-cormorant font-bold text-[#002B4A] mb-3 line-clamp-1 group-hover:text-[#00AEEF] transition-colors">
+                                    {property.title}
+                                </h3>
+
+                                {/* Features */}
+                                <div className="flex items-center justify-between py-3 border-t border-gray-100 mb-3">
+                                    <div className="flex flex-col items-center gap-0.5">
+                                        <Bed className="w-4 h-4 text-gray-400 group-hover:text-[#002B4A] transition-colors" />
+                                        <span className="text-[10px] font-semibold text-gray-600">{property.beds} Beds</span>
                                     </div>
-                                    <div className="flex items-center gap-1">
-                                        <Bath className="w-3.5 h-3.5" />
-                                        <span className="text-xs font-medium">{property.baths}</span>
+                                    <div className="w-px h-6 bg-gray-100" />
+                                    <div className="flex flex-col items-center gap-0.5">
+                                        <Bath className="w-4 h-4 text-gray-400 group-hover:text-[#002B4A] transition-colors" />
+                                        <span className="text-[10px] font-semibold text-gray-600">{property.baths} Baths</span>
                                     </div>
-                                    <div className="flex items-center gap-1">
-                                        <Maximize className="w-3.5 h-3.5" />
-                                        <span className="text-xs font-medium">{property.sqft} Sq Ft</span>
+                                    <div className="w-px h-6 bg-gray-100" />
+                                    <div className="flex flex-col items-center gap-0.5">
+                                        <Maximize className="w-4 h-4 text-gray-400 group-hover:text-[#002B4A] transition-colors" />
+                                        <span className="text-[10px] font-semibold text-gray-600">{property.sqft} sqft</span>
                                     </div>
                                 </div>
 
-                                {/* Type */}
-                                <div className="mt-3">
-                                    <span className="text-xs font-semibold text-gray-700">{property.type}</span>
+                                {/* Type & Action */}
+                                <div className="mt-auto flex items-center justify-between pt-3 border-t border-gray-100">
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-xs font-bold text-[#002B4A]">{property.type}</span>
+                                    </div>
+
+                                    <button className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-[#002B4A] hover:border-[#002B4A] hover:text-white transition-all duration-300">
+                                        <ChevronRight className="w-4 h-4" />
+                                    </button>
                                 </div>
                             </div>
                         </motion.div>
