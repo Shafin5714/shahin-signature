@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 import Footer from "@/components/Footer";
 import { LoadingProvider } from "@/context/LoadingContext";
 import PageLoader from "@/components/PageLoader";
+import CustomCursor from "@/components/CustomCursor";
 
 // ... (existing imports)
 
@@ -42,6 +43,7 @@ export default function RootLayout({
         className={`${dmSans.variable} ${cormorantGaramond.variable} ${poppins.variable} font-sans antialiased`}
       >
         <LoadingProvider>
+          <CustomCursor />
           <PageLoader />
           {children}
           <Footer />
