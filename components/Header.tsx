@@ -38,7 +38,7 @@ export default function Header() {
       animate={{ y: isLoading ? -100 : 0, opacity: isLoading ? 0 : 1 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: isLoading ? 0 : 0.8 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? "bg-[#002B4A]/90 backdrop-blur-md shadow-lg py-3"
+        ? "bg-black/90 backdrop-blur-md shadow-lg py-3"
         : "bg-transparent py-6"
         }`}
     >
@@ -57,10 +57,10 @@ export default function Header() {
             <Link
               key={link.name}
               href={link.href}
-              className="relative text-white text-sm font-medium tracking-wide hover:text-blue-300 transition-colors group py-2"
+              className="relative text-white text-sm font-medium tracking-wide hover:text-gray-300 transition-colors group py-2"
             >
               {link.name}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full" />
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </nav>
@@ -71,15 +71,15 @@ export default function Header() {
             <Phone size={18} />
             <span className="text-sm font-poppins font-medium tracking-wide">+880 1712 345 678</span>
           </div>
-          <button className="text-white/90 hover:text-blue-400 transition-colors">
+          <button className="text-white/90 hover:text-white transition-colors">
             <User size={22} />
           </button>
           <Link
             href="/create-listing"
             className="relative px-6 py-2.5 rounded overflow-hidden group bg-transparent border border-white/30 hover:border-transparent transition-all duration-300"
           >
-            <div className="absolute inset-0 w-0 bg-linear-to-r from-[#00AEEF] to-[#0077A3] transition-all duration-[250ms] ease-out group-hover:w-full" />
-            <span className="relative text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+            <div className="absolute inset-0 w-0 bg-white transition-all duration-[250ms] ease-out group-hover:w-full" />
+            <span className="relative text-white group-hover:text-black text-xs font-bold uppercase tracking-widest flex items-center gap-2">
               Create Listing
             </span>
           </Link>
@@ -101,14 +101,14 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-[#002B4A]/95 backdrop-blur-xl border-t border-white/10 overflow-hidden"
+            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 overflow-hidden"
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-white text-lg font-cormorant font-semibold hover:text-blue-400"
+                  className="text-white text-lg font-cormorant font-semibold hover:text-gray-300"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -121,7 +121,7 @@ export default function Header() {
               </div>
               <Link
                 href="/create-listing"
-                className="flex items-center justify-center gap-2 bg-linear-to-r from-[#00AEEF] to-[#0077A3] text-white px-4 py-3 rounded font-bold uppercase mt-2 shadow-lg"
+                className="flex items-center justify-center gap-2 bg-white text-black px-4 py-3 rounded font-bold uppercase mt-2 shadow-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Create a Listing

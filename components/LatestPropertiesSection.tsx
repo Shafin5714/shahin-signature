@@ -95,7 +95,7 @@ export default function LatestPropertiesSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-[#00AEEF] font-semibold text-sm uppercase tracking-wider mb-2"
+                        className="text-black/50 font-semibold text-sm uppercase tracking-wider mb-2"
                     >
                         Latest Listings
                     </motion.p>
@@ -104,7 +104,7 @@ export default function LatestPropertiesSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-3xl md:text-4xl font-bold text-[#002B4A] mb-3"
+                        className="text-3xl md:text-4xl font-bold text-black mb-3"
                     >
                         Check Our Selection Of Finest Properties
                     </motion.h2>
@@ -140,11 +140,11 @@ export default function LatestPropertiesSection() {
                                 />
 
                                 {/* Gradient Overlay */}
-                                <div className="absolute inset-0 bg-linear-to-t from-[#002B4A]/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
+                                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
 
                                 {/* Status Badge */}
                                 <div className="absolute top-4 left-4">
-                                    <span className={`backdrop-blur-md bg-white/90 text-[#002B4A] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm`}>
+                                    <span className={`backdrop-blur-md bg-white/90 text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm`}>
                                         {property.status}
                                     </span>
                                 </div>
@@ -158,7 +158,7 @@ export default function LatestPropertiesSection() {
 
                                 {/* Price Tag */}
                                 <div className="absolute bottom-4 left-4">
-                                    <div className="bg-[#002B4A] text-white px-3 py-1.5 rounded-lg shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                    <div className="bg-black text-white px-3 py-1.5 rounded-lg shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                                         <span className="text-base font-bold">{property.price}</span>
                                     </div>
                                 </div>
@@ -167,33 +167,33 @@ export default function LatestPropertiesSection() {
                             {/* Content */}
                             <div className="p-5 flex flex-col grow relative">
                                 {/* Floating Price (Visible by default, hides on hover) */}
-                                <div className="absolute -top-5 right-5 bg-[#00AEEF] text-white px-3 py-1.5 rounded-lg shadow-lg group-hover:opacity-0 transition-opacity duration-300">
+                                <div className="absolute -top-5 right-5 bg-black text-white px-3 py-1.5 rounded-lg shadow-lg group-hover:opacity-0 transition-opacity duration-300">
                                     <span className="text-base font-bold">{property.price}</span>
                                 </div>
 
                                 <div className="flex items-start gap-1.5 text-gray-500 mb-1.5 mt-1">
-                                    <MapPin className="w-3.5 h-3.5 mt-0.5 text-[#00AEEF] shrink-0" />
+                                    <MapPin className="w-3.5 h-3.5 mt-0.5 text-black shrink-0" />
                                     <span className="text-xs font-medium line-clamp-1">{property.address}</span>
                                 </div>
 
-                                <h3 className="text-lg font-cormorant font-bold text-[#002B4A] mb-3 line-clamp-1 group-hover:text-[#00AEEF] transition-colors">
+                                <h3 className="text-lg font-cormorant font-bold text-black mb-3 line-clamp-1 group-hover:text-zinc-700 transition-colors">
                                     {property.title}
                                 </h3>
 
                                 {/* Features */}
                                 <div className="flex items-center justify-between py-3 border-t border-gray-100 mb-3">
                                     <div className="flex flex-col items-center gap-0.5">
-                                        <Bed className="w-4 h-4 text-gray-400 group-hover:text-[#002B4A] transition-colors" />
+                                        <Bed className="w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
                                         <span className="text-[10px] font-semibold text-gray-600">{property.beds} Beds</span>
                                     </div>
                                     <div className="w-px h-6 bg-gray-100" />
                                     <div className="flex flex-col items-center gap-0.5">
-                                        <Bath className="w-4 h-4 text-gray-400 group-hover:text-[#002B4A] transition-colors" />
+                                        <Bath className="w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
                                         <span className="text-[10px] font-semibold text-gray-600">{property.baths} Baths</span>
                                     </div>
                                     <div className="w-px h-6 bg-gray-100" />
                                     <div className="flex flex-col items-center gap-0.5">
-                                        <Maximize className="w-4 h-4 text-gray-400 group-hover:text-[#002B4A] transition-colors" />
+                                        <Maximize className="w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
                                         <span className="text-[10px] font-semibold text-gray-600">{property.sqft} sqft</span>
                                     </div>
                                 </div>
@@ -201,10 +201,10 @@ export default function LatestPropertiesSection() {
                                 {/* Type & Action */}
                                 <div className="mt-auto flex items-center justify-between pt-3 border-t border-gray-100">
                                     <div className="flex items-center gap-2">
-                                        <span className="text-xs font-bold text-[#002B4A]">{property.type}</span>
+                                        <span className="text-xs font-bold text-black">{property.type}</span>
                                     </div>
 
-                                    <button className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-[#002B4A] hover:border-[#002B4A] hover:text-white transition-all duration-300">
+                                    <button className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-black hover:border-black hover:text-white transition-all duration-300">
                                         <ChevronRight className="w-4 h-4" />
                                     </button>
                                 </div>
@@ -221,7 +221,7 @@ export default function LatestPropertiesSection() {
                     transition={{ delay: 0.6 }}
                     className="text-center"
                 >
-                    <button className="group relative inline-flex items-center gap-3 bg-transparent border-2 border-[#00AEEF] text-[#00AEEF] hover:text-white font-semibold px-10 py-3.5 overflow-hidden transition-all duration-300 before:absolute before:inset-0 before:bg-[#00AEEF] before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-300">
+                    <button className="group relative inline-flex items-center gap-3 bg-transparent border-2 border-black text-black hover:text-white font-semibold px-10 py-3.5 overflow-hidden transition-all duration-300 before:absolute before:inset-0 before:bg-black before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-300">
                         <span className="relative z-10">Load More</span>
                     </button>
                 </motion.div>

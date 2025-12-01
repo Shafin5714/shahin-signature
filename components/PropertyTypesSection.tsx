@@ -46,8 +46,8 @@ export default function PropertyTypesSection() {
         <section className="py-24 bg-white relative overflow-hidden">
             {/* Background Decorations */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-20 left-10 w-64 h-64 border-2 border-[#00AEEF]/5 rounded-full"></div>
-                <div className="absolute bottom-20 right-10 w-48 h-48 bg-[#002B4A]/5 rotate-45 transform"></div>
+                <div className="absolute top-20 left-10 w-64 h-64 border-2 border-black/5 rounded-full"></div>
+                <div className="absolute bottom-20 right-10 w-48 h-48 bg-black/5 rotate-45 transform"></div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
@@ -57,7 +57,7 @@ export default function PropertyTypesSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-[#00AEEF] font-bold tracking-[0.2em] uppercase text-xs mb-4 block"
+                        className="text-black/50 font-bold tracking-[0.2em] uppercase text-xs mb-4 block"
                     >
                         Property Categories
                     </motion.span>
@@ -66,7 +66,7 @@ export default function PropertyTypesSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-4xl md:text-5xl font-bold text-[#002B4A] mb-4"
+                        className="text-4xl md:text-5xl font-bold text-black mb-4"
                     >
                         Browse By Property Type
                     </motion.h2>
@@ -107,7 +107,7 @@ export default function PropertyTypesSection() {
                             <div className="absolute inset-0 p-6 flex flex-col justify-between">
                                 {/* Count Badge - Always Visible */}
                                 <div className="flex justify-end">
-                                    <span className="bg-[#E74C3C] text-white text-xs font-semibold px-3 py-1.5 rounded">
+                                    <span className="bg-black text-white text-xs font-semibold px-3 py-1.5 rounded">
                                         {property.count}
                                     </span>
                                 </div>

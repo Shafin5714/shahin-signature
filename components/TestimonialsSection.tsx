@@ -71,12 +71,12 @@ export default function TestimonialsSection() {
     }, [currentIndex]);
 
     return (
-        <section className="py-24 bg-[#002B4A] relative overflow-hidden">
+        <section className="py-24 bg-black relative overflow-hidden">
             {/* Background Decorations */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-full bg-[url('/pattern-grid.png')] opacity-5"></div>
-                <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#00AEEF]/10 rounded-full blur-3xl"></div>
-                <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl"></div>
+                <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+                <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-zinc-800/30 rounded-full blur-3xl"></div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
@@ -86,7 +86,7 @@ export default function TestimonialsSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-[#00AEEF] font-semibold text-sm uppercase tracking-wider mb-2"
+                        className="text-white/60 font-semibold text-sm uppercase tracking-wider mb-2"
                     >
                         Testimonials
                     </motion.p>
@@ -99,7 +99,7 @@ export default function TestimonialsSection() {
                     >
                         What Our Clients Say
                     </motion.h2>
-                    <div className="w-24 h-1 bg-linear-to-r from-[#00AEEF] to-transparent mx-auto rounded-full"></div>
+                    <div className="w-24 h-1 bg-linear-to-r from-white/40 to-transparent mx-auto rounded-full"></div>
                 </div>
 
                 {/* Carousel */}
@@ -127,7 +127,7 @@ export default function TestimonialsSection() {
                                         className="object-cover"
                                     />
                                 </div>
-                                <div className="absolute -top-4 -right-4 bg-[#00AEEF] text-white p-2 rounded-full shadow-lg z-20">
+                                <div className="absolute -top-4 -right-4 bg-white text-black p-2 rounded-full shadow-lg z-20">
                                     <Quote size={16} fill="currentColor" />
                                 </div>
                             </div>
@@ -140,12 +140,12 @@ export default function TestimonialsSection() {
                                 <h4 className="text-white font-bold text-lg tracking-wide">
                                     {testimonials[currentIndex].name}
                                 </h4>
-                                <p className="text-[#00AEEF] text-sm font-medium uppercase tracking-widest mb-3">
+                                <p className="text-white/60 text-sm font-medium uppercase tracking-widest mb-3">
                                     {testimonials[currentIndex].role}
                                 </p>
                                 <div className="flex items-center justify-center gap-1">
                                     {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                                        <Star key={i} size={14} className="text-[#D4AF37] fill-[#D4AF37]" />
+                                        <Star key={i} size={14} className="text-white fill-white" />
                                     ))}
                                 </div>
                             </div>
@@ -176,7 +176,7 @@ export default function TestimonialsSection() {
                                 setDirection(index > currentIndex ? 1 : -1);
                                 setCurrentIndex(index);
                             }}
-                            className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? "bg-[#00AEEF] w-8" : "bg-white/20 hover:bg-white/40"
+                            className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? "bg-white w-8" : "bg-white/20 hover:bg-white/40"
                                 }`}
                         />
                     ))}

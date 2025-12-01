@@ -47,11 +47,11 @@ const services = [
 
 export default function FindHomeSection() {
     return (
-        <section className="py-24 bg-gray-50 relative overflow-hidden">
+        <section className="py-24 bg-white relative overflow-hidden">
             {/* Simple Background Decorations */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-20 left-10 w-64 h-64 border-2 border-[#00AEEF]/5 rounded-full"></div>
-                <div className="absolute bottom-20 right-10 w-48 h-48 bg-[#002B4A]/5 rotate-45 transform"></div>
+                <div className="absolute top-20 left-10 w-64 h-64 border-2 border-black/5 rounded-full"></div>
+                <div className="absolute bottom-20 right-10 w-48 h-48 bg-black/5 rotate-45 transform"></div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
@@ -130,7 +130,7 @@ export default function FindHomeSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.3 }}
-                            className="text-[#00AEEF] font-semibold text-sm uppercase tracking-wider mb-3"
+                            className="text-black/50 font-semibold text-sm uppercase tracking-wider mb-3"
                         >
                             Why Choose Us
                         </motion.p>
@@ -140,7 +140,7 @@ export default function FindHomeSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.4 }}
-                            className="text-3xl md:text-4xl font-bold text-[#002B4A] mb-4"
+                            className="text-3xl md:text-4xl font-bold text-black mb-4"
                         >
                             Find your new home with us
                         </motion.h2>
@@ -152,7 +152,7 @@ export default function FindHomeSection() {
                             transition={{ duration: 0.6, delay: 0.5 }}
                             className="text-gray-600 mb-8 leading-relaxed"
                         >
-                            With over <span className="font-bold text-[#002B4A]">৳2 Billion</span> in sales volume, our agency is the industry's top luxury producer with over <span className="font-bold text-[#002B4A]">25 years</span> of experience in Bangladesh.
+                            With over <span className="font-bold text-black">৳2 Billion</span> in sales volume, our agency is the industry's top luxury producer with over <span className="font-bold text-black">25 years</span> of experience in Bangladesh.
                         </motion.p>
 
                         {/* Services Grid */}
@@ -166,11 +166,11 @@ export default function FindHomeSection() {
                                     transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                                     className="flex items-start gap-3 group"
                                 >
-                                    <div className="w-12 h-12 bg-[#00AEEF]/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-[#00AEEF] transition-colors duration-300">
-                                        <service.icon className="w-5 h-5 text-[#00AEEF] group-hover:text-white transition-colors duration-300" />
+                                    <div className="w-12 h-12 bg-black/5 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-black transition-colors duration-300">
+                                        <service.icon className="w-5 h-5 text-black group-hover:text-white transition-colors duration-300" />
                                     </div>
                                     <div className="flex-1">
-                                        <h4 className="font-bold text-[#002B4A] mb-1 text-base">{service.title}</h4>
+                                        <h4 className="font-bold text-black mb-1 text-base">{service.title}</h4>
                                         <p className="text-xs text-gray-500 leading-relaxed">{service.description}</p>
                                     </div>
                                 </motion.div>
@@ -184,7 +184,7 @@ export default function FindHomeSection() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 1 }}
                         >
-                            <button className="group relative inline-flex items-center gap-3 bg-transparent border-2 border-[#002B4A] text-[#002B4A] hover:text-white font-semibold px-8 py-3.5 overflow-hidden transition-all duration-300 before:absolute before:inset-0 before:bg-[#002B4A] before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-300">
+                            <button className="group relative inline-flex items-center gap-3 bg-transparent border-2 border-black text-black hover:text-white font-semibold px-8 py-3.5 overflow-hidden transition-all duration-300 before:absolute before:inset-0 before:bg-black before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-300">
                                 <span className="relative z-10">More About Us</span>
                                 <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
                             </button>

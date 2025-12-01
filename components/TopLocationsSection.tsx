@@ -52,7 +52,7 @@ export default function TopLocationsSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-[#00AEEF] font-semibold text-sm uppercase tracking-wider mb-2"
+                        className="text-black/50 font-semibold text-sm uppercase tracking-wider mb-2"
                     >
                         Explore Neighborhoods
                     </motion.p>
@@ -61,7 +61,7 @@ export default function TopLocationsSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-3xl md:text-4xl font-bold text-[#002B4A] mb-3"
+                        className="text-3xl md:text-4xl font-bold text-black mb-3"
                     >
                         Top Locations
                     </motion.h2>
@@ -120,7 +120,7 @@ export default function TopLocationsSection() {
                             </div>
 
                             {/* Hover Border Effect */}
-                            <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#00AEEF]/30 transition-colors duration-500" />
+                            <div className="absolute inset-0 border-2 border-transparent group-hover:border-white/20 transition-colors duration-500" />
                         </motion.div>
                     ))}
                 </div>
@@ -133,7 +133,7 @@ export default function TopLocationsSection() {
                     transition={{ delay: 0.5 }}
                     className="text-center mt-10"
                 >
-                    <button className="group relative inline-flex items-center gap-3 bg-transparent border-2 border-[#002B4A] text-[#002B4A] hover:text-white font-semibold px-10 py-3.5 overflow-hidden transition-all duration-300 before:absolute before:inset-0 before:bg-[#002B4A] before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-300">
+                    <button className="group relative inline-flex items-center gap-3 bg-transparent border-2 border-black text-black hover:text-white font-semibold px-10 py-3.5 overflow-hidden transition-all duration-300 before:absolute before:inset-0 before:bg-black before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-300">
                         <span className="relative z-10">View All Locations</span>
                         <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
                     </button>

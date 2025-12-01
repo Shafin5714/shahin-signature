@@ -41,8 +41,8 @@ export default function ServicesSection() {
         <section className="py-24 bg-white relative overflow-hidden">
             {/* Simple Background Decorations */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-20 left-10 w-64 h-64 border-2 border-[#00AEEF]/5 rounded-full"></div>
-                <div className="absolute bottom-20 right-10 w-48 h-48 bg-[#002B4A]/5 rotate-45 transform"></div>
+                <div className="absolute top-20 left-10 w-64 h-64 border-2 border-black/5 rounded-full"></div>
+                <div className="absolute bottom-20 right-10 w-48 h-48 bg-black/5 rotate-45 transform"></div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
@@ -52,7 +52,7 @@ export default function ServicesSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-[#00AEEF] font-semibold text-sm uppercase tracking-wider mb-2"
+                        className="text-black/50 font-semibold text-sm uppercase tracking-wider mb-2"
                     >
                         What We Offer
                     </motion.p>
@@ -61,7 +61,7 @@ export default function ServicesSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-3xl md:text-4xl font-bold text-[#002B4A] mb-3"
+                        className="text-3xl md:text-4xl font-bold text-black mb-3"
                     >
                         Services We Provide
                     </motion.h2>
@@ -88,12 +88,12 @@ export default function ServicesSection() {
                             className="group bg-white border border-gray-100 p-6 hover:shadow-xl transition-all duration-300 cursor-pointer"
                         >
                             {/* Icon Container */}
-                            <div className="w-14 h-14 bg-[#00AEEF]/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#00AEEF] transition-colors duration-300">
-                                <service.icon className="w-6 h-6 text-[#00AEEF] group-hover:text-white transition-colors duration-300" />
+                            <div className="w-14 h-14 bg-black/5 rounded-lg flex items-center justify-center mb-4 group-hover:bg-black transition-colors duration-300">
+                                <service.icon className="w-6 h-6 text-black group-hover:text-white transition-colors duration-300" />
                             </div>
 
                             {/* Content */}
-                            <h3 className="text-lg font-bold text-[#002B4A] mb-2 group-hover:text-[#00AEEF] transition-colors duration-300">
+                            <h3 className="text-lg font-bold text-black mb-2 group-hover:text-zinc-700 transition-colors duration-300">
                                 {service.title}
                             </h3>
                             <p className="text-gray-600 text-sm leading-relaxed mb-4">
@@ -101,7 +101,7 @@ export default function ServicesSection() {
                             </p>
 
                             {/* Read More Link */}
-                            <div className="flex items-center gap-2 text-[#00AEEF] font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="flex items-center gap-2 text-black font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <span>Learn more</span>
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                             </div>

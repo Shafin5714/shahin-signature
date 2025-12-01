@@ -26,7 +26,7 @@ export default function HeroSection() {
                     }}
                 />
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-linear-to-b from-[#002B4A]/60 via-[#002B4A]/40 to-[#002B4A]/70 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/80 mix-blend-multiply" />
                 <div className="absolute inset-0 bg-black/10" />
             </div>
 
@@ -61,7 +61,7 @@ export default function HeroSection() {
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
                                 className={`px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widest transition-all duration-300 backdrop-blur-md border ${activeTab === tab
-                                    ? "bg-white text-[#002B4A] border-white shadow-lg transform scale-105"
+                                    ? "bg-white text-black border-white shadow-lg transform scale-105"
                                     : "bg-black/20 text-white border-white/20 hover:bg-black/40 hover:border-white/50"
                                     }`}
                             >
@@ -75,9 +75,9 @@ export default function HeroSection() {
 
                         {/* Looking For */}
                         <div className="w-full md:w-1/4 px-6 py-3 relative group">
-                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-left group-hover:text-[#00AEEF] transition-colors">Looking For</label>
+                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-left group-hover:text-black/60 transition-colors">Looking For</label>
                             <div className="flex items-center gap-2">
-                                <Home size={18} className="text-[#002B4A]" />
+                                <Home size={18} className="text-black" />
                                 <select className="w-full bg-transparent text-gray-800 font-semibold text-sm focus:outline-none cursor-pointer appearance-none truncate">
                                     <option>Property Type</option>
                                     <option>Apartment</option>
@@ -89,9 +89,9 @@ export default function HeroSection() {
 
                         {/* Location */}
                         <div className="w-full md:w-1/4 px-6 py-3 relative group">
-                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-left group-hover:text-[#00AEEF] transition-colors">Location</label>
+                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-left group-hover:text-black/60 transition-colors">Location</label>
                             <div className="flex items-center gap-2">
-                                <MapPin size={18} className="text-[#002B4A]" />
+                                <MapPin size={18} className="text-black" />
                                 <select className="w-full bg-transparent text-gray-800 font-semibold text-sm focus:outline-none cursor-pointer appearance-none truncate">
                                     <option>All Cities</option>
                                     <option>Dhaka</option>
@@ -104,9 +104,9 @@ export default function HeroSection() {
 
                         {/* Size */}
                         <div className="w-full md:w-1/5 px-6 py-3 relative group">
-                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-left group-hover:text-[#00AEEF] transition-colors">Size</label>
+                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-left group-hover:text-black/60 transition-colors">Size</label>
                             <div className="flex items-center gap-2">
-                                <BedDouble size={18} className="text-[#002B4A]" />
+                                <BedDouble size={18} className="text-black" />
                                 <select className="w-full bg-transparent text-gray-800 font-semibold text-sm focus:outline-none cursor-pointer appearance-none truncate">
                                     <option>Bedrooms</option>
                                     <option>1</option>
@@ -118,9 +118,9 @@ export default function HeroSection() {
 
                         {/* Budget */}
                         <div className="w-full md:w-1/5 px-6 py-3 relative group">
-                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-left group-hover:text-[#00AEEF] transition-colors">Budget</label>
+                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-left group-hover:text-black/60 transition-colors">Budget</label>
                             <div className="flex items-center gap-2">
-                                <span className="text-[#002B4A] font-bold text-lg">৳</span>
+                                <span className="text-black font-bold text-lg">৳</span>
                                 <select className="w-full bg-transparent text-gray-800 font-semibold text-sm focus:outline-none cursor-pointer appearance-none truncate">
                                     <option>Max Price</option>
                                     <option>10,000</option>
@@ -132,7 +132,7 @@ export default function HeroSection() {
 
                         {/* Search Button */}
                         <div className="p-1.5 w-full md:w-auto ml-auto">
-                            <button className="w-full md:w-14 h-14 bg-[#002B4A] hover:bg-[#00AEEF] text-white rounded-xl md:rounded-full shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-105 group">
+                            <button className="w-full md:w-14 h-14 bg-black hover:bg-zinc-800 text-white rounded-xl md:rounded-full shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-105 group">
                                 <Search size={24} className="group-hover:rotate-90 transition-transform duration-300" />
                             </button>
                         </div>

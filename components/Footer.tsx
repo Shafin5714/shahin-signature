@@ -5,12 +5,12 @@ import { Facebook, Instagram, Linkedin, Twitter, MapPin, Phone, Mail } from "luc
 
 export default function Footer() {
     return (
-        <footer className="bg-[#002B4A] text-white pt-24 pb-12 relative overflow-hidden">
+        <footer className="bg-black text-white pt-24 pb-12 relative overflow-hidden border-t border-white/5">
             {/* Decorative Background */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-[#00AEEF]/30 to-transparent"></div>
-                <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#00AEEF]/5 rounded-full blur-[100px]"></div>
-                <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-[#00AEEF]/8 rounded-full blur-[100px]"></div>
+                <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/10 to-transparent"></div>
+                <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-white/3 rounded-full blur-[100px]"></div>
+                <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-white/5 rounded-full blur-[100px]"></div>
             </div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
