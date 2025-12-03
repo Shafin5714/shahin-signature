@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Search, MapPin, BedDouble, DollarSign, Home } from "lucide-react";
+import { Search, MapPin, BedDouble, Home } from "lucide-react";
 
 import { useLoading } from "@/context/LoadingContext";
 
@@ -11,7 +11,8 @@ export default function HeroSection() {
     const [activeTab, setActiveTab] = useState("all");
 
     return (
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-12 md:py-0">
+        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-12
+         lg:py-0">
             {/* Background Image with Ken Burns Effect */}
             <div className="absolute inset-0 z-0 overflow-hidden">
                 <motion.div
@@ -31,7 +32,7 @@ export default function HeroSection() {
             </div>
 
             {/* Content */}
-            <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center mt-8 md:mt-20">
+            <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center mt-8 lg:mt-20">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={isLoading ? { opacity: 0, y: 30 } : { opacity: 1, y: 0 }}
@@ -42,7 +43,7 @@ export default function HeroSection() {
                         Welcome To <br className="md:hidden" />
                         <span className="font-bold italic">Shahin Signature</span>
                     </h1>
-                    <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto mb-16 font-light font-poppins tracking-wide leading-relaxed drop-shadow-md">
+                    <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto mb-8 lg:mb-16 font-light font-poppins tracking-wide leading-relaxed drop-shadow-md">
                         An innovative real estate platform ensuring your success in a competitive market.
                     </p>
                 </motion.div>
@@ -55,7 +56,7 @@ export default function HeroSection() {
                     className="w-full max-w-5xl"
                 >
                     {/* Floating Tabs */}
-                    <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-6">
+                    <div className="flex flex-wrap justify-center gap-2 lg:gap-4 mb-6">
                         {["all", "rent", "sale"].map((tab) => (
                             <button
                                 key={tab}
@@ -71,10 +72,10 @@ export default function HeroSection() {
                     </div>
 
                     {/* Segmented Search Bar */}
-                    <div className="bg-white rounded-3xl md:rounded-full shadow-2xl p-2 flex flex-col md:flex-row items-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                    <div className="bg-white rounded-3xl lg:rounded-full shadow-2xl p-2 flex flex-col lg:flex-row items-center divide-y lg:divide-y-0 lg:divide-x divide-gray-100">
 
                         {/* Looking For */}
-                        <div className="w-full md:w-1/4 px-6 py-3 relative group">
+                        <div className="w-full lg:w-1/4 px-6 py-3 relative group">
                             <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-left group-hover:text-black/60 transition-colors">Looking For</label>
                             <div className="flex items-center gap-2">
                                 <Home size={18} className="text-black" />
@@ -88,7 +89,7 @@ export default function HeroSection() {
                         </div>
 
                         {/* Location */}
-                        <div className="w-full md:w-1/4 px-6 py-3 relative group">
+                        <div className="w-full lg:w-1/4 px-6 py-3 relative group">
                             <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-left group-hover:text-black/60 transition-colors">Location</label>
                             <div className="flex items-center gap-2">
                                 <MapPin size={18} className="text-black" />
@@ -103,7 +104,7 @@ export default function HeroSection() {
                         </div>
 
                         {/* Size */}
-                        <div className="w-full md:w-1/5 px-6 py-3 relative group">
+                        <div className="w-full lg:w-1/5 px-6 py-3 relative group">
                             <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-left group-hover:text-black/60 transition-colors">Size</label>
                             <div className="flex items-center gap-2">
                                 <BedDouble size={18} className="text-black" />
@@ -117,7 +118,7 @@ export default function HeroSection() {
                         </div>
 
                         {/* Budget */}
-                        <div className="w-full md:w-1/5 px-6 py-3 relative group">
+                        <div className="w-full lg:w-1/5 px-6 py-3 relative group">
                             <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-left group-hover:text-black/60 transition-colors">Budget</label>
                             <div className="flex items-center gap-2">
                                 <span className="text-black font-bold text-lg">৳</span>
@@ -131,8 +132,8 @@ export default function HeroSection() {
                         </div>
 
                         {/* Search Button */}
-                        <div className="p-1.5 w-full md:w-auto ml-auto">
-                            <button className="w-full md:w-14 h-14 bg-black hover:bg-zinc-800 text-white rounded-xl md:rounded-full shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-105 group">
+                        <div className="p-1.5 w-full lg:w-auto ml-auto">
+                            <button className="w-full lg:w-14 h-14 bg-black hover:bg-zinc-800 text-white rounded-xl lg:rounded-full shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-105 group">
                                 <Search size={24} className="group-hover:rotate-90 transition-transform duration-300" />
                             </button>
                         </div>

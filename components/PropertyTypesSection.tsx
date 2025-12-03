@@ -6,7 +6,7 @@ import Image from "next/image";
 const properties = [
     {
         id: 1,
-        title: "Townhome",
+        title: "Hotel & Resorts",
         count: "20 Properties",
         image: "/property-types/townhome.png",
         className: "md:col-span-2 md:row-span-1",
@@ -27,9 +27,9 @@ const properties = [
     },
     {
         id: 4,
-        title: "Studio",
+        title: "Lands",
         count: "12 Properties",
-        image: "/property-types/studio.png",
+        image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
         className: "md:col-span-1 md:row-span-1",
     },
     {
