@@ -41,7 +41,7 @@ export default function HeroSection() {
                 >
                     <h1 className="text-4xl md:text-7xl lg:text-8xl font-cormorant font-light text-white mb-8 leading-none tracking-tight drop-shadow-lg">
                         Welcome To <br className="md:hidden" />
-                        <span className="font-bold italic">Shahin Signature</span>
+                        <span className="font-bold italic">Signature</span>
                     </h1>
                     <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto mb-8 lg:mb-16 font-light font-poppins tracking-wide leading-relaxed drop-shadow-md">
                         An innovative real estate platform ensuring your success in a competitive market.
@@ -57,7 +57,7 @@ export default function HeroSection() {
                 >
                     {/* Floating Tabs */}
                     <div className="flex flex-wrap justify-center gap-2 lg:gap-4 mb-6">
-                        {["all", "rent", "sale"].map((tab) => (
+                        {["all", "sale"].map((tab) => (
                             <button
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}

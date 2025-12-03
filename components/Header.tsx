@@ -47,7 +47,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2 group">
           <div className="text-white font-cormorant text-3xl tracking-wider flex flex-col leading-none">
             <span className="font-bold">SHAHIN</span>
-            <span className="font-light text-sm tracking-[0.3em] text-gray-300 group-hover:text-white transition-colors">SIGNATURE</span>
+            <span className="font-light text-sm tracking-[0.4em] text-gray-300 group-hover:text-white transition-colors">SIGNATURE</span>
           </div>
         </Link>
 
