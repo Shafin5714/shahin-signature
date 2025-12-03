@@ -104,7 +104,7 @@ export default function FindHomeSection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: 0.4 }}
-                                className="relative h-[215px] overflow-hidden group cursor-pointer"
+                                className="relative h-[220px] overflow-hidden group cursor-pointer"
                             >
                                 <Image
                                     src={propertyImages[2].image}
